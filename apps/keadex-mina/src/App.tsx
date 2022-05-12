@@ -3,6 +3,7 @@ import logo from './logo.svg'
 import tauriCircles from './tauri.svg'
 import tauriWord from './wordmark.svg'
 import './App.css'
+import { invoke } from '@tauri-apps/api/tauri'
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
         </a>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <p>
+          <button onClick={()=>invoke('my_custom_command', { invokeMessage: 'Hello!' })}>Test Tauri</button>
         </p>
       </header>
     </div>
