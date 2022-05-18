@@ -11,7 +11,7 @@ impl DiagramController {
     }
   }
   pub fn give_me_name(&self, invoke_message: &str) -> String {
-    log::trace!("Hello log");
+    log::debug!("Hello log");
     "hello jack ".to_owned() + invoke_message
   }
 }
