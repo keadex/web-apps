@@ -1,18 +1,21 @@
+/*!
+Keadex Mina
+This is the main entrypoint for the app.
+*/
+
 #![cfg_attr(
   all(not(debug_assertions), target_os = "windows"),
   windows_subsystem = "windows"
 )]
 
-pub mod controller;
-pub mod repository;
-use crate::controller::diagram_controller::DiagramController;
-use env_logger::{Builder, Env};
-use log::{LevelFilter};
+
+
+use keadex_mina::controller::diagram_controller::DiagramController;
+
 use state::Storage;
 use std::sync::RwLock;
 
 static DIAGRAM_CONTROLLER: Storage<RwLock<DiagramController>> = Storage::new();
-
 
 
 #[tauri::command]
@@ -23,20 +26,12 @@ fn my_custom_command(invoke_message: String) {
   // println!("I was invoked from JS, with this message: {}", invoke_message);
 }
 
-fn init_logger() {
-  let env = Env::default();
-
-  Builder::from_env(env)
-    .filter_level(LevelFilter::max())
-    .init();
-}
-
 fn init_services() {
   DIAGRAM_CONTROLLER.set(RwLock::new(DiagramController::new()));
 }
 
 fn main() {
-  init_logger();
+  keadex_mina::logger::init();
   init_services();
   log::info!("a log from `MyLogger`");
   println!("hello there!");
