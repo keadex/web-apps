@@ -11,7 +11,7 @@ use std::{
 };
 
 use serde::ser::Serializer;
-use serde::{Serialize, Deserialize};
+use serde::{Serialize};
 
 use log::Level;
 
