@@ -9,10 +9,21 @@ This is the main entrypoint for the app.
 )]
 
 use keadex_mina::core::app::ROOT_RESOLVER;
+use keadex_mina::model::person::{Person, PersonLocation};
 
 #[tauri::command]
 fn my_custom_command(invoke_message: String) {
   log::info!("{}", ROOT_RESOLVER.get().read().unwrap().diagram_controller_resolver.resolve().get().write().unwrap().give_me_name(&invoke_message[..]));
+  let person = Person {
+    uuid: "ciao".to_string(),
+    location: PersonLocation::Internal,
+    alias: "ciao".to_string(),
+    name: "ciao".to_string(),
+    description: "ciao".to_string(),
+    notes: "ciao".to_string()
+  };
+  log::info!("{}", serde_json::to_string(&person).unwrap());
+  log::info!("{}", person.location);
   //println!("{}", DIAGRAM_CONTROLLER.get().read().unwrap().diagram_repository.give_me_name(&invoke_message[..]));
 }
 

@@ -21,6 +21,8 @@ tauri = { version = "1.0.0-rc.14", features = ["api-all", "isolation"] }
 log = { version = "0.4", features = ["serde"] }
 env_logger = "0.8.4"
 state = "0.5"
+strum = { version = "0.24", features = ["derive"] }
+strum_macros = "0.24"
 
 [features]
 default = [ "custom-protocol" ]
