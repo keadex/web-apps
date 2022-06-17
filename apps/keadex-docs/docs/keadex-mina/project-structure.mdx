@@ -173,7 +173,7 @@ The diagram's spec file can be considered the extension of the PlantUML definiti
 | ``` uuid ``` | string | No | Uuid of the diagram. |
 | ``` name ``` | string | No | Name of the diagram. |
 | ``` description ``` | string | Yes | Description of the diagram. |
-| ``` entities ``` | Entity[] | Yes | Entities included in the diagram. |
+| ``` entities ``` | DiagramEntity[] | Yes | Entities included in the diagram. |
 | ``` shapes ``` | Shape[] | Yes | Shapes included in the diagram. |
 
 
@@ -305,7 +305,7 @@ Stored *boundary* entities used by Mina to provide capabilities like: search & i
 
 ## Object Types
 
-### Entity
+### DiagramEntity
 | Attribute(s) | Type | Optional | Description |
 | --- | :---: | :---: | ----------- |
 | ``` alias ``` | string | No | Alias of the entity. It corresponds to the ``` alias ``` defined in the ``` .puml ``` file. |
