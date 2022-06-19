@@ -3,7 +3,7 @@ Model representing the Container diagram.
 */
 
 use serde::{Serialize, Deserialize};
-use crate::model::base_entity::BaseEntity;
+use crate::model::diagram::base_entity::BaseEntity;
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Container {
