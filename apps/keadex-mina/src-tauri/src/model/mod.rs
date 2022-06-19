@@ -1,1 +1,1 @@
-pub mod diagram;
+pub mod c4_entity;

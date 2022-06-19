@@ -9,9 +9,9 @@ This is the main entrypoint for the app.
 )]
 
 use keadex_mina::core::app::ROOT_RESOLVER;
-use keadex_mina::model::diagram::person::Person;
-use keadex_mina::model::diagram::base_entity::EntityLocation;
-use keadex_mina::model::diagram::base_entity::BaseEntity;
+use keadex_mina::model::c4_entity::person::Person;
+use keadex_mina::model::c4_entity::base_entity::EntityLocation;
+use keadex_mina::model::c4_entity::base_entity::BaseEntity;
 
 #[tauri::command]
 fn my_custom_command(invoke_message: String) {
