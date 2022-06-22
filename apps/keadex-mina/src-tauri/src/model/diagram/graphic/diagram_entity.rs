@@ -4,6 +4,8 @@ Model representing an entity drawn in a diagram.
 
 use serde::{Serialize, Deserialize};
 use strum_macros::Display;
+use crate::model::diagram::graphic::position::Position;
+use crate::model::diagram::graphic::size::Size;
 
 #[derive(Serialize, Deserialize, Display, Debug)]
 pub enum EntityType {
@@ -24,5 +26,12 @@ pub enum EntityType {
 #[derive(Serialize, Deserialize, Debug)]
 pub struct DiagramEntity {
   pub alias: String,
-  pub entity_type: EntityType
+  pub entity_type: EntityType,
+  pub position: Position
+  pub rotation: f32,
+  pub size: Size,
+  pub from: String,
+  pub to: String,
+  pub label: String,
+  pub linked_diagram_uuid: String
 }
