@@ -148,7 +148,9 @@ The diagram's spec file can be considered the extension of the PlantUML definiti
         "y": 1
       },
       "rotation": 90,
-      "size": 120
+      "size": {
+        "width": 120
+      }
     }
   ],
   "shapes": [
@@ -312,7 +314,7 @@ Stored *boundary* entities used by Mina to provide capabilities like: search & i
 | ``` entity_type ``` | string | No | Type of entity. It corresponds to the type defined in the ``` .puml ``` file. Options: ``` PERSON ```, ``` SOFTWARE_SYSTEM ```, ``` CONTAINER ```, ``` COMPONENT ```, ``` RELATIONSHIP ```, ``` BOUNDARY ``` |
 | ``` position ``` | Position | No | Canvas-relative position of the entity.  |
 | ``` rotation ``` | float (degrees) | No | Rotation of the entity.  |
-| ``` size ``` | Size \| float | No | Size of the entity. In case of ```"type": "RELATIONSHIP"```, it is a number representing the length of the arrow. |
+| ``` size ``` | Size | No | Size of the entity. |
 | ``` from ``` | string | No when ```"type": "RELATIONSHIP"``` | Required only when ```"type": "RELATIONSHIP"```. It corresponds to the field ``` from ``` of the related relationship defined in the ``` .puml ``` file. |
 | ``` to ``` | string | No when ```"type": "RELATIONSHIP"``` | Required only when ```"type": "RELATIONSHIP"```. It corresponds to the field ``` to ``` of the related relationship defined in the ``` .puml ``` file. |
 | ``` label ``` | string | No when ```"type": "RELATIONSHIP"``` | Required only when ```"type": "RELATIONSHIP"```. It corresponds to the field ``` label ``` of the related relationship defined in the ``` .puml ``` file. |
