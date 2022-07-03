@@ -23,6 +23,7 @@ env_logger = "0.8.4"
 state = "0.5"
 strum = { version = "0.24", features = ["derive"] }
 strum_macros = "0.24"
+notify = "4.0.17"
 
 [features]
 default = [ "custom-protocol" ]

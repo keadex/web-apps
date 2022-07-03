@@ -28,12 +28,14 @@ fn my_custom_command(invoke_message: String) {
   };
   log::info!("{}", serde_json::to_string(&person).unwrap());
   log::info!("{}", person.location);
+  ROOT_RESOLVER.get().read().unwrap().data_synchronizer_resolver.resolve().get().write().unwrap().stop_synchronization(String::from("C:\\Users\\Jack\\Documents\\Progetti\\Keadex\\SourceCode\\web-apps\\apps\\keadex-mina\\test-mina-project"));
   //println!("{}", DIAGRAM_CONTROLLER.get().read().unwrap().diagram_repository.give_me_name(&invoke_message[..]));
 }
 
 fn main() {
   keadex_mina::logger::init();
   let _app = keadex_mina::core::app::App::default();
+  ROOT_RESOLVER.get().read().unwrap().data_synchronizer_resolver.resolve().get().write().unwrap().start_synchronization(String::from("C:\\Users\\Jack\\Documents\\Progetti\\Keadex\\SourceCode\\web-apps\\apps\\keadex-mina\\test-mina-project"));
   tauri::Builder::default()
     .invoke_handler(tauri::generate_handler![my_custom_command])
     .run(tauri::generate_context!())

@@ -1,5 +1,6 @@
 use crate::resolver::Resolver;
 use crate::controller::diagram_controller::DiagramController;
+use crate::core::data_synchronizer::DataSynchronizer;
 
 /**
 Resolver for the core.
@@ -9,13 +10,15 @@ Private implementation details live on the wrapped resolvers.
 Controllers and repositories are resolved from this `Resolver`.
 */
 pub struct RootResolver {
-  pub diagram_controller_resolver: Resolver<DiagramController>
+  pub diagram_controller_resolver: Resolver<DiagramController>,
+  pub data_synchronizer_resolver: Resolver<DataSynchronizer>
 }
 
 impl Default for RootResolver {
   fn default() -> Self {
     RootResolver {
-      diagram_controller_resolver: Default::default()
+      diagram_controller_resolver: Default::default(),
+      data_synchronizer_resolver: Default::default()
     }
   }
 }
