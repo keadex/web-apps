@@ -27,7 +27,7 @@ pub enum EntityType {
 pub struct DiagramEntity {
   pub alias: String,
   pub entity_type: EntityType,
-  pub position: Position
+  pub position: Position,
   pub rotation: f32,
   pub size: Size,
   pub from: String,
